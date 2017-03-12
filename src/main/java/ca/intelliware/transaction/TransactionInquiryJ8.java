@@ -79,7 +79,7 @@ public class TransactionInquiryJ8 {
 	/**
 	 *  Are there any trader based in Milan?
 	 */
-	public boolean areThereAnyTradeFromMilan(){
+	public boolean areThereAnyTraderFromMilan(){
 		return transactions.stream()
 				.anyMatch(transaction -> transaction.getTrader().getCity().equals("Milan"));
 	}

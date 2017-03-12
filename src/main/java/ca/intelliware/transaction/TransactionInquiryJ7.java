@@ -125,7 +125,7 @@ public class TransactionInquiryJ7 {
       /**
        *  Are there any trader based in Milan?
        */
-      public boolean areThereAnyTradeFromMilan(){
+      public boolean areThereAnyTraderFromMilan(){
     	  
     	  for (Transaction transaction : transactions){
     		  if ("Milan".equals(transaction.getTrader().getCity())){

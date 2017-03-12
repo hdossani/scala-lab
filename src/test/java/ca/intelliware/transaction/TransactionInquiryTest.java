@@ -11,11 +11,11 @@ import static org.junit.Assert.assertTrue;
 
 public class TransactionInquiryTest {
 	
-	private TransactionInquiryJ7 fixture;
+	private TransactionInquiryJ8 fixture;
 	
 	@Before
 	public void setUp() {
-		fixture = new TransactionInquiryJ7();
+		fixture = new TransactionInquiryJ8();
 	}
 
     @Test
@@ -70,7 +70,7 @@ public class TransactionInquiryTest {
 	@Test
 	public void testAreThereAnyTradeFromMilan() {
 		
-		boolean result = fixture.areThereAnyTradeFromMilan();
+		boolean result = fixture.areThereAnyTraderFromMilan();
 		
 		assertTrue(result);
 	}
