@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 
 
-public class TransactionInquiry {
+public class TransactionInquiryJ7 {
 
 	  private Trader raoul = new Trader("Raoul", "Cambridge");
       private Trader mario = new Trader("Mario","Milan");

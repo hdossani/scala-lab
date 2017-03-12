@@ -11,11 +11,11 @@ import static org.junit.Assert.assertTrue;
 
 public class TransactionInquiryTest {
 	
-	private TransactionInquiry fixture;
+	private TransactionInquiryJ7 fixture;
 	
 	@Before
 	public void setUp() {
-		fixture = new TransactionInquiry();
+		fixture = new TransactionInquiryJ7();
 	}
 
     @Test
