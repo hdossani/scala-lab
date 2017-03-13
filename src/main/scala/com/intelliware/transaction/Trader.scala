@@ -1,5 +1,5 @@
 package com.intelliware.transaction
 
 case class Trader(name: String, var city: String) {
-  override def toString: String = "Trader:" + name + " in " + city
+  override def toString = "Trader:" + name + " in " + city
 }
