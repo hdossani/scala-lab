@@ -24,15 +24,15 @@ object MenuInquiry {
     * Find the name of all the dishes with more than 400 calories.
     */
   def getLowCaloricDishNames = {
-     menu.filter(_.calories > 400)
-       .sortBy(_.calories)
-       .map(_.name)
+     menu.filter(d => d.calories > 400)
+         .sortBy(d => d.calories)
+         .map(d => d.name)
   }
 
   /**
     * Return the name of all the dishes separated by comma.
     */
-  def getShortMenuCommaSeparated = menu.map(_.name).mkString(", ")
+  def getShortMenuCommaSeparated = menu.map(d => d.name).mkString(", ")
 
 
   /**
@@ -66,14 +66,14 @@ object MenuInquiry {
   /**
     * Count dishes in groups.
     */
-  def countDishesInGroups : Map[Type, Int] = menu.groupBy(_.dtype).mapValues(_.size)
+  def countDishesInGroups : Map[Type, Int] = menu.groupBy(d => d.dtype).mapValues(dishes => dishes.size)
 
   /**
     * Get the sum of calories by dish type.
     */
   def sumCaloriesByType : Map[Type, Int] = {
     groupDishesByType.map {
-      case (dtype , dishes) => (dtype -> dishes.map(_.calories).foldLeft(0)(_+_))
+      case (dtype , dishes) => (dtype -> dishes.map(d => d.calories).foldLeft(0)((c1, c2) => c1 + c2))
     }
   }
 
@@ -89,14 +89,14 @@ object MenuInquiry {
   /**
     * Partition the menu by vegetarian dish.
     */
-  def partitionByVegetarian : (List[Dish], List[Dish]) = menu.partition(_.vegetarian)
+  def partitionByVegetarian : (List[Dish], List[Dish]) = menu.partition(d => d.vegetarian)
 
   /**
     * Group vegetarian dishes by type.
     */
   def groupVegetarianDishesByType : (Map[Type, List[Dish]], Map[Type, List[Dish]]) = {
-    val partition = partitionByVegetarian
-    (partition._1.groupBy(_.dtype), partition._2.groupBy(_.dtype))
+    val (vegetarian, nonvegetarian) = partitionByVegetarian
+    (vegetarian.groupBy(_.dtype), nonvegetarian.groupBy(_.dtype))
   }
 
   /**

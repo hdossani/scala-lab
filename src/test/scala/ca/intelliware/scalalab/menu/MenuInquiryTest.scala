@@ -98,10 +98,7 @@ class MenuInquiryTest extends FunSuite {
 
   test("Partition vegetarian dishes"){
 
-    val result: (List[Dish], List[Dish]) = fixture.partitionByVegetarian
-
-    val nonvegetarian = result._2
-    val vegetarian = result._1
+    val (vegetarian, nonvegetarian) = fixture.partitionByVegetarian
 
     assertResult(5)(nonvegetarian.size)
     assertResult("pork")(nonvegetarian(0).name)
@@ -119,10 +116,7 @@ class MenuInquiryTest extends FunSuite {
 
   test("Partition vegetarian dishes and group by type") {
 
-    val result = fixture.groupVegetarianDishesByType
-
-    val vegetarian = result._1
-    val nonvegetarian = result._2
+    val (vegetarian, nonvegetarian) = fixture.groupVegetarianDishesByType
 
     assertResult(4)(vegetarian(OTHER).size)
 
@@ -144,10 +138,10 @@ class MenuInquiryTest extends FunSuite {
 
   test("Most caloric dish by type"){
 
-    val (v, nv) = fixture.mostCaloricPartitionedByVegetarian
+    val (vegetarian, nonvegetarian) = fixture.mostCaloricPartitionedByVegetarian
 
-    assertResult("pizza")(v.name)
-    assertResult("pork")(nv.name)
+    assertResult("pizza")(vegetarian.name)
+    assertResult("pork")(nonvegetarian.name)
   }
 
 }
