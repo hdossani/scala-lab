@@ -18,3 +18,7 @@ project/plugins/project/
 
 *.iml
 .idea/
+.project
+.classpath
+.settings/
+

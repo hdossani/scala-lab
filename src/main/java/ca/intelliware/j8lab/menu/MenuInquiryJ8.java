@@ -1,4 +1,4 @@
-package ca.intelliware.menu;
+package ca.intelliware.j8lab.menu;
 
 import java.util.*;
 
@@ -22,7 +22,7 @@ public class MenuInquiryJ8 {
 
 
 	/**
-	 *  Find the name of all the dishes with less than 400 calories.
+	 *  Find the name of all the dishes with more than 400 calories.
 	 */
 	public List<String> getLowCaloricDishesNames(){
 		return menu.stream()
@@ -71,19 +71,6 @@ public class MenuInquiryJ8 {
 		return menu.stream().collect(groupingBy(Dish::getType, counting()));
 	}
 
-	public static Map<Dish.Type, Optional<Dish>> mostCaloricDishesByType() {
-		return menu.stream().collect(
-				groupingBy(Dish::getType,
-						reducing((Dish d1, Dish d2) -> d1.getCalories() > d2.getCalories() ? d1 : d2)));
-	}
-
-	public static Map<Dish.Type, Dish> mostCaloricDishesByTypeWithoutOprionals() {
-		return menu.stream().collect(
-				groupingBy(Dish::getType,
-						collectingAndThen(
-								reducing((d1, d2) -> d1.getCalories() > d2.getCalories() ? d1 : d2),
-								Optional::get)));
-	}
 
 	public static Map<Dish.Type, Long> sumCaloriesByType() {
 		return menu.stream().collect(groupingBy(Dish::getType,
@@ -107,7 +94,7 @@ public class MenuInquiryJ8 {
 		return menu.stream().collect(partitioningBy(Dish::isVegetarian, groupingBy(Dish::getType)));
 	}
 
-	public Object mostCaloricPartitionedByVegetarian() {
+	public Map mostCaloricPartitionedByVegetarian() {
 		return menu.stream().collect(
 				partitioningBy(Dish::isVegetarian,
 						collectingAndThen(

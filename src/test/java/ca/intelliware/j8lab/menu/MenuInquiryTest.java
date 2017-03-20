@@ -1,4 +1,4 @@
-package ca.intelliware.menu;
+package ca.intelliware.j8lab.menu;
 
 
 import org.junit.Before;
@@ -164,9 +164,8 @@ public class MenuInquiryTest {
     @Test
     public void testMostCaloricPartitionedByVegetarian(){
 
-        Object result = fixture.mostCaloricPartitionedByVegetarian();
+        Map result = fixture.mostCaloricPartitionedByVegetarian();
 
-        assertTrue(result instanceof Map);
         assertEquals("pizza", ((Map<Boolean, Dish>)result).get(TRUE).getName());
         assertEquals("pork", ((Map<Boolean, Dish>)result).get(FALSE).getName());
     }

@@ -1,4 +1,4 @@
-package ca.intelliware.menu;
+package ca.intelliware.j8lab.menu;
 
 
 import java.util.*;
@@ -20,7 +20,7 @@ public class MenuInquiryJ7 {
                     new Dish("salmon", false, 450, Dish.Type.FISH));
 
     /**
-     *  Find the name of all the dishes with less than 400 calories.
+     *  Find the name of all the dishes with more than 400 calories.
      */
     public List<String> getLowCaloricDishesNames(){
         List<Dish> lowCaloricDishes = new ArrayList<>();
@@ -235,7 +235,7 @@ public class MenuInquiryJ7 {
         return vegetarianDishesByType;
     }
 
-    public Object mostCaloricPartitionedByVegetarian() {
+    public Map mostCaloricPartitionedByVegetarian() {
 
         Map<Boolean, Dish> mostCaloricPartitionedByVegetarian = new HashMap();
 

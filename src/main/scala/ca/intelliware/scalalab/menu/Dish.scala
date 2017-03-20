@@ -1,6 +1,6 @@
-package com.intelliware.menu
+package ca.intelliware.scalalab.menu
 
-import ca.intelliware.menu.Dish.Type
+import ca.intelliware.j8lab.menu.Dish.Type
 
 
 case class Dish(name: String, vegetarian: Boolean, calories: Int, dtype: Type) {

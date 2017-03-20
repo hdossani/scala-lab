@@ -1,4 +1,4 @@
-package ca.intelliware.transaction;
+package ca.intelliware.j8lab.transaction;
 
 
 import org.junit.Before;
