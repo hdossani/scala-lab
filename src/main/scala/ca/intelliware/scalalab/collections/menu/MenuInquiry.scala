@@ -1,9 +1,9 @@
-package ca.intelliware.scalalab.menu
+package ca.intelliware.scalalab.collections.menu
 
-import ca.intelliware.j8lab.menu.Dish.Type
+import ca.intelliware.j8lab.streams.menu.Dish.Type
 
-import ca.intelliware.j8lab.menu.Dish.CaloricLevel
-import ca.intelliware.j8lab.menu.Dish.CaloricLevel._
+import ca.intelliware.j8lab.streams.menu.Dish.CaloricLevel
+import ca.intelliware.j8lab.streams.menu.Dish.CaloricLevel._
 
 
 object MenuInquiry {

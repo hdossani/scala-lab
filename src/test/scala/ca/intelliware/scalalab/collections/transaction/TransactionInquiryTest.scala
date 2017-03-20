@@ -1,4 +1,4 @@
-package ca.intelliware.scalalab.transaction
+package ca.intelliware.scalalab.collections.transaction
 
 import org.scalatest.FunSuite
 

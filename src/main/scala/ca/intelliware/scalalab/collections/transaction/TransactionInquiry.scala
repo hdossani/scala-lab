@@ -1,4 +1,4 @@
-package ca.intelliware.scalalab.transaction
+package ca.intelliware.scalalab.collections.transaction
 
 object TransactionInquiry {
 
@@ -19,28 +19,29 @@ object TransactionInquiry {
    /**
     *  Find how many transactions are from 2012.
     */
-  def findNumberOfTransactionsFrom2012 = transactions.count(_.year == 2012)
+  def findNumberOfTransactionsFrom2012 = transactions.count(t => t.year == 2012)
 
   /**
     *  Find all transactions from year 2011 and sort them by value (small to high).
     */
-  def findTransactionsFrom2011 = transactions.filter(_.year == 2011).sortBy(_.value)
+  def findTransactionsFrom2011 = transactions.filter(t => t.year == 2011).sortBy(_.value)
 
   /**
     * Find all the unique cities where the traders work.
     */
-  def findAllUniqueCities = transactions.map(_.trader.city).distinct
+  def findAllUniqueCities = transactions.map(t => t.trader.city).distinct
 
   /**
     * Find all traders from Cambridge and sort them by name.
     */
-  def findAllTradersFromCambridge = transactions.map(_.trader).filter(_.city equals "Cambridge").distinct.sortBy(_.name)
-
+  def findAllTradersFromCambridge = {
+    transactions.map(t => t.trader).filter(_.city equals "Cambridge").distinct.sortBy(_.name)
+  }
 
   /**
     * Get a string of all traders’ names sorted alphabetically.
     */
-  def getAllTradersNames = transactions.map(_.trader.name).distinct.sorted.foldLeft("")(_+_)
+  def getAllTradersNames = transactions.map(t => t.trader.name).distinct.sorted.foldLeft("")(_+_)
 
   /**
     * Are there any trader based in Milan?

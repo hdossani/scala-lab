@@ -1,4 +1,4 @@
-package ca.intelliware.j8lab.transaction;
+package ca.intelliware.j8lab.streams.transaction;
 
 import java.util.ArrayList;
 import java.util.Arrays;

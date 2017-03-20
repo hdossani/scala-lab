@@ -1,4 +1,4 @@
-package ca.intelliware.j8lab.transaction;
+package ca.intelliware.j8lab.streams.transaction;
 
 public class Transaction{
 

@@ -1,8 +1,8 @@
-package ca.intelliware.scalalab.menu
+package ca.intelliware.scalalab.collections.menu
 
 import org.scalatest.FunSuite
-import ca.intelliware.j8lab.menu.Dish.CaloricLevel._
-import ca.intelliware.j8lab.menu.Dish.Type._
+import ca.intelliware.j8lab.streams.menu.Dish.CaloricLevel._
+import ca.intelliware.j8lab.streams.menu.Dish.Type._
 
 
 class MenuInquiryTest extends FunSuite {

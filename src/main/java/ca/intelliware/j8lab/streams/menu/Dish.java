@@ -1,4 +1,4 @@
-package ca.intelliware.j8lab.menu;
+package ca.intelliware.j8lab.streams.menu;
 
 public class Dish {
 
