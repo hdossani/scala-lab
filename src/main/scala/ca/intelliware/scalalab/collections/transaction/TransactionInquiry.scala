@@ -24,46 +24,44 @@ object TransactionInquiry {
   /**
     *  Find all transactions from year 2011 and sort them by value (small to high).
     */
-  def findTransactionsFrom2011 = transactions.filter(t => t.year == 2011).sortBy(_.value)
+  def findTransactionsFrom2011 = ???
 
   /**
     * Find all the unique cities where the traders work.
     */
-  def findAllUniqueCities = transactions.map(t => t.trader.city).distinct
+  def findAllUniqueCities = transactions.map(???).distinct
 
   /**
     * Find all traders from Cambridge and sort them by name.
     */
-  def findAllTradersFromCambridge = {
-    transactions.map(t => t.trader).filter(_.city equals "Cambridge").distinct.sortBy(_.name)
-  }
+  def findAllTradersFromCambridge = ???
+
 
   /**
     * Get a string of all traders’ names sorted alphabetically.
     */
-  def getAllTradersNames = transactions.map(t => t.trader.name).distinct.sorted.foldLeft("")(_+_)
+  def getAllTradersNames = ???
 
   /**
     * Are there any trader based in Milan?
     */
-  def areThereAnyTraderFromMilan = transactions.exists(_.trader.city equals "Milan")
+  def areThereAnyTraderFromMilan = transactions.exists(???)
 
   /**
     * Update all transactions so that the traders from Milan are set to Cambridge.
+    *
+    * hint: Use foreach function to mutate transactions.
     */
-  def updateTradersFromMilanToCambridge = {
-    transactions.map(_.trader).filter(_.city equals "Milan").foreach(_.city = "Cambridge")
-    transactions
-  }
+  def updateTradersFromMilanToCambridge = ???
 
   /**
     * Get the highest value in all the transactions.
     */
-  def getHighestTransactionValue = transactions.maxBy(_.value).value
+  def getHighestTransactionValue = ???
 
   /**
     * Get the sum of all transaction values.
     */
-  def getTransactionTotal = transactions.map(_.value).fold(0)(_+_)
+  def getTransactionTotal = transactions.map(???).fold(???)(???)
 
 }

@@ -20,7 +20,7 @@ class ParseTest extends FunSuite {
     assertResult("Sorry, I can't help you.")(fixture.parseArgument("--help"))
     assertResult("Beta")(fixture.parseArgument("-v"))
     assertResult("Beta")(fixture.parseArgument("--version"))
-    assert(fixture.parseArgument("-f") startsWith "Unknown argument:")
+    assertResult("Unknown argument: -f")(fixture.parseArgument("-f"))
   }
 
   test("Parse instance type") {
