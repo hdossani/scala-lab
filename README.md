@@ -34,4 +34,4 @@ The exercises for this lab are organized in an implementation/unit test format. 
 
 ### Solutions
 
-The solutions for all the exercises are available on GitHub repository history for `scala-lab`.
+The solutions for all the exercises are available on GitHub repository history. Git Hash `d1fbabd28d81b3b7562c6ee08fb5f3f3aa4babc1`.
