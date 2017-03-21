@@ -25,9 +25,7 @@
 
 ## Lab Exercises
 
-The exercises for this lab are organized in a implementation/unit test format.
-
-A partial implementation of the functions is supplied and you have to replace the '**_???_**' tokens with Scala code so the unit tests will pass.
+The exercises for this lab are organized in an implementation/unit test format. A partial implementation of the functions is supplied and you then have to replace the '**_???_**' (not yet implemented operator) with Scala code so the unit tests will pass.
 
 
 ### Running the tests with Maven
