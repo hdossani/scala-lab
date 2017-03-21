@@ -31,3 +31,7 @@ The exercises for this lab are organized in an implementation/unit test format. 
 ### Running the tests with Maven
 
 `mvn clean compile scala:compile scala:testCompile test`
+
+### Solutions
+
+The solutions for all the exercises are available on GitHub repository history for `scala-lab`.
