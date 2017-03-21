@@ -23,13 +23,13 @@
   * Several cool features, such as Pattern Matching, For-Comprehensions, Traits, named and Default Parameters, etc.
   * Makes you a better programmer in other languages such as Java and Javascript.
 
-## Exercises
+## Lab Exercises
 
 The exercises for this lab are organized in a implementation/unit test format.
 
 A partial implementation of the functions is supplied and you have to replace the '**_???_**' tokens with Scala code so the unit tests will pass.
 
 
-### Running the tests with maven
+### Running the tests with Maven
 
 `mvn clean compile scala:compile scala:testCompile test`
