@@ -24,7 +24,7 @@ object TransactionInquiry {
   /**
     *  Find all transactions from year 2011 and sort them by value (small to high).
     */
-  def findTransactionsFrom2011 = ???
+  def findTransactionsFrom2011 : List[Transaction]= ???
 
   /**
     * Find all the unique cities where the traders work.
@@ -34,7 +34,7 @@ object TransactionInquiry {
   /**
     * Find all traders from Cambridge and sort them by name.
     */
-  def findAllTradersFromCambridge = ???
+  def findAllTradersFromCambridge: List[Trader] = ???
 
 
   /**
@@ -52,7 +52,7 @@ object TransactionInquiry {
     *
     * hint: Use foreach function to mutate transactions.
     */
-  def updateTradersFromMilanToCambridge = ???
+  def updateTradersFromMilanToCambridge : List[Transaction] = ???
 
   /**
     * Get the highest value in all the transactions.
