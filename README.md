@@ -31,7 +31,7 @@ The exercises for this lab are organized in an implementation/unit test format. 
 
 1. Install IntelliJ IDEA 2016.3
 2. Install Scala Plugin for IntelliJ IDEA
-3. Go to File | Project Structure | Global Libraries | Add Scala SDK
+3. Go to File | Project Structure | SDKs | Add Scala SDK
 4. Add Scala SDK
 5. Choose version 2.11.8
 6. Clone or download this github repository
