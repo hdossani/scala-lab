@@ -47,6 +47,8 @@ At this point, you should be able to run and debug the code/unit tests within In
 
 `mvn clean compile scala:compile scala:testCompile test`
 
+Initially, all Scala Tests are going to fail due to a `not yet implemented exception`.
+
 ### Solutions
 
 The solutions for all the exercises are available on GitHub repository history. Git Hash `d1fbabd28d81b3b7562c6ee08fb5f3f3aa4babc1`.
