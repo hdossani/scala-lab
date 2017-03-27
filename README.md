@@ -25,7 +25,7 @@
 
 ## Lab Exercises
 
-The exercises for this lab are organized in an implementation/unit test format. A partial implementation of the functions is supplied and you then have to replace the **_???_** (not yet implemented operator) with Scala code so the unit tests will pass.
+The exercises for this lab are organized in an implementation/unit test format. Partial implementations for the functions are supplied and you then have to replace the **_???_** (not yet implemented operator) with Scala code so the unit tests will pass.
 Start with the exercises about high order functions `hof`, and then move to `pattern matching` and then `collections`.  
 
 ### Setup
