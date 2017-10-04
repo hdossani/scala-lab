@@ -1,7 +1,6 @@
 package ca.wglabs.streams.transaction;
 
 
-import org.junit.Before;
 import org.junit.Test;
 
 import java.util.List;
@@ -9,14 +8,10 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-public class TransactionInquiryTest {
+public abstract class TransactionInquiryTest {
 
-    private TransactionInquiryJ8 fixture;
+    protected TransactionInquiry fixture;
 
-    @Before
-    public void setUp() {
-        fixture = new TransactionInquiryJ8();
-    }
 
     @Test
     public void testFindTransactionsFrom2012() {

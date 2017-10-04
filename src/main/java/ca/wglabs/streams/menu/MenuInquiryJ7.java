@@ -6,18 +6,8 @@ import java.util.*;
 import static java.lang.Boolean.FALSE;
 import static java.lang.Boolean.TRUE;
 
-public class MenuInquiryJ7 {
+public class MenuInquiryJ7 implements MenuInquiry {
 
-    public static final List<Dish> menu =
-            Arrays.asList( new Dish("pork", false, 800, Dish.Type.MEAT),
-                    new Dish("beef", false, 700, Dish.Type.MEAT),
-                    new Dish("chicken", false, 400, Dish.Type.MEAT),
-                    new Dish("french fries", true, 530, Dish.Type.OTHER),
-                    new Dish("rice", true, 350, Dish.Type.OTHER),
-                    new Dish("season fruit", true, 120, Dish.Type.OTHER),
-                    new Dish("pizza", true, 550, Dish.Type.OTHER),
-                    new Dish("prawns", false, 400, Dish.Type.FISH),
-                    new Dish("salmon", false, 450, Dish.Type.FISH));
 
     /**
      *  Find the name of all the dishes with more than 400 calories.
@@ -158,7 +148,7 @@ public class MenuInquiryJ7 {
         return dishesPerGroup;
     }
 
-    public static Map<Dish.Type, Long> sumCaloriesByType() {
+    public Map<Dish.Type, Long> sumCaloriesByType() {
 
         Map<Dish.Type, Long> caloriesByType =  new HashMap();
 
@@ -173,7 +163,7 @@ public class MenuInquiryJ7 {
         return caloriesByType;
     }
 
-    public static Map<Dish.Type, Set<Dish.CaloricLevel>> caloricLevelsByType() {
+    public Map<Dish.Type, Set<Dish.CaloricLevel>> caloricLevelsByType() {
 
         Map<Dish.Type, Set<Dish.CaloricLevel>> caloricLevelByType =  new HashMap();
 

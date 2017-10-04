@@ -14,14 +14,10 @@ import static java.lang.Boolean.TRUE;
 import static org.junit.Assert.*;
 
 
-public class MenuInquiryTest {
+public abstract class MenuInquiryTest {
 
-    private MenuInquiryJ8 fixture;
+    protected MenuInquiry fixture;
 
-    @Before
-    public void setUp() throws Exception {
-        fixture = new MenuInquiryJ8();
-    }
 
     @Test
     public void testGetLowCaloricDishesNames(){
