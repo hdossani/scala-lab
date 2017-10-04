@@ -13,7 +13,7 @@ object Absolute {
   /**
     *  Assign the function 'abs' to a variable 'fn'.
     */
-  val fn : (Int => Int) = ???
+  //val fn : (Int => Int) = ???
 
 
   /**

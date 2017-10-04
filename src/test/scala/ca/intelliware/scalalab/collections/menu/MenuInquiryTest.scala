@@ -1,6 +1,6 @@
 package ca.intelliware.scalalab.collections.menu
 
-import org.scalatest.FunSuite
+import org.scalatest.{FunSuite, Ignore}
 import ca.intelliware.j8lab.streams.menu.Dish.CaloricLevel._
 import ca.intelliware.j8lab.streams.menu.Dish.Type._
 
@@ -9,21 +9,21 @@ class MenuInquiryTest extends FunSuite {
 
   val fixture = MenuInquiry
 
-  test("Dishes with more than 400 calories") {
+  ignore("Dishes with more than 400 calories") {
 
     val result = fixture.getLowCaloricDishNames
 
     assertResult(List("salmon", "french fries", "pizza", "beef", "pork"))(result)
   }
 
-  test("Comma separated list of dishes"){
+  ignore("Comma separated list of dishes"){
 
     val result = fixture.getShortMenuCommaSeparated
 
     assertResult("pork, beef, chicken, french fries, rice, season fruit, pizza, prawns, salmon")(result)
   }
 
-  test("Dishes grouped by type"){
+  ignore("Dishes grouped by type"){
 
     val result = fixture.groupDishesByType
 
@@ -36,7 +36,7 @@ class MenuInquiryTest extends FunSuite {
     assertResult(OTHER)(result(OTHER)(0).dtype)
   }
 
-  test("Dishes grouped by caloric level"){
+  ignore("Dishes grouped by caloric level"){
 
     val result = fixture.groupDishesByCaloricLevel
 
@@ -49,7 +49,7 @@ class MenuInquiryTest extends FunSuite {
     assert(result(FAT)(0).calories > 700)
   }
 
-  test("Dishes grouped by type and then caloric level") {
+  ignore("Dishes grouped by type and then caloric level") {
 
     val result = fixture.groupDishesByTypeAndCaloricLevel
 
@@ -59,7 +59,7 @@ class MenuInquiryTest extends FunSuite {
 
   }
 
-  test("Count dishes group by caloric level"){
+  ignore("Count dishes group by caloric level"){
 
     val result = fixture.countDishesInGroups
 
@@ -68,7 +68,7 @@ class MenuInquiryTest extends FunSuite {
     assertResult(4)(result(OTHER))
   }
 
-  test("Sum dish calories by type"){
+  ignore("Sum dish calories by type"){
 
     val result = fixture.sumCaloriesByType
 
@@ -77,7 +77,7 @@ class MenuInquiryTest extends FunSuite {
     assertResult(1550)(result(OTHER))
   }
 
-  test("Group caloric level by type"){
+  ignore("Group caloric level by type"){
 
     val result = fixture.caloricLevelsByType
 
@@ -96,7 +96,7 @@ class MenuInquiryTest extends FunSuite {
     assert(result(OTHER).contains(NORMAL))
   }
 
-  test("Partition vegetarian dishes"){
+  ignore("Partition vegetarian dishes"){
 
     val (vegetarian, nonvegetarian) = fixture.partitionByVegetarian
 
@@ -114,7 +114,7 @@ class MenuInquiryTest extends FunSuite {
     assertResult("pizza")(vegetarian(3).name)
   }
 
-  test("Partition vegetarian dishes and group by type") {
+  ignore("Partition vegetarian dishes and group by type") {
 
     val (vegetarian, nonvegetarian) = fixture.groupVegetarianDishesByType
 
@@ -136,7 +136,7 @@ class MenuInquiryTest extends FunSuite {
     assertResult("chicken")(nonvegetarian(MEAT)(2).name)
   }
 
-  test("Most caloric dish by type"){
+  ignore("Most caloric dish by type"){
 
     val (vegetarian, nonvegetarian) = fixture.mostCaloricPartitionedByVegetarian
 

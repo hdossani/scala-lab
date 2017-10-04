@@ -1,12 +1,13 @@
 package ca.intelliware.scalalab.hof
 
-import org.scalatest.FunSuite
+import org.scalatest.{FunSuite, Ignore}
+
 
 class AbsoluteTest extends FunSuite {
 
   val fixture = Absolute
 
-  test("Calculate absolute values") {
+  ignore("Calculate absolute values") {
 
     val ns = List(1, -3, -5, 7, 9, -4, 0)
 

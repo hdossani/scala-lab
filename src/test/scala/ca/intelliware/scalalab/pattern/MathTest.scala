@@ -1,7 +1,8 @@
 package ca.intelliware.scalalab.pattern
 
-import org.scalatest.FunSuite
+import org.scalatest.{FunSuite, Ignore}
 
+@Ignore
 class MathTest extends FunSuite {
 
   val fixture = Math
