@@ -1,54 +1,57 @@
-# Scala Lab
+# J7 -> J8 => Scala: a Refactoring Exercise 
 
-## What is Scala?
-   * 'Scala' means Scalable Language. 
-   * It's a Functional and Object Oriented Programming Language.
-   * It's a Strongly Typed Language.
-   * Started in 2001 at the École Polytechnique Fédérale de Lausanne (EPFL) by Martin Odersky.
-   * Released publicly in 2004.
+The goal of this exercise is to have an introduction of a few basic concepts of the the Scala Programming Language through code refactoring.
+Based on challenges and their solutions already implemented in Java 7 and Java 8, the idea is to write the can same solutions in Scala so they pass the also supplied set of unit tests.
+After complete, the participants will be able to compare their answers with the corresponding ones in Java and have a taste of how awesome Scala really is!
 
-## Why learn Scala?
-
-  * Better developer productivity.
-  * More expressive Language.
-  * Type Inference.
-  * Functional Language by design.
-  * Better support for immutability.
-  * Better support for Parallel Programming.
-  * Largely adopted on the 'Big Data' space. 
-  * JVM Based language. 
-  * Interoperability with Java, including frameworks like Spring and Hibernate.
-  * Usage of existing Java libraries.
-  * Good tooling and documentation.
-  * Several cool features, such as Pattern Matching, For-Comprehensions, Traits, named and Default Parameters, etc.
-  * Makes you a better programmer in other languages such as Java and Javascript.
-
-## Lab Exercises
-
-The exercises for this lab are organized in an implementation/unit test format. Partial implementations for the functions are supplied and you then have to replace the **_???_** (not yet implemented operator) with Scala code so the unit tests will pass.
-Start with the exercises about high order functions `hof`, and then move to `pattern matching` and then `collections`.  
 
 ### Setup
 
-1. Install IntelliJ IDEA 2016.3
-2. Install Scala Plugin for IntelliJ IDEA
-3. Go to File | Project Structure | Global Libraries | Add Scala SDK
-4. Add Scala SDK
-5. Choose version 2.11.8
-6. Clone or download this github repository
-7. Run `mvn clean compile scala:compile scala:testCompile test`
-8. Create an Empty IntelliJ project
-9. Go to File | New | Module from existing Sources
-10. Choose Maven Module
+The instructions assume following pieces of software are ***already installed*** on the machine:
 
-At this point, you should be able to run and debug the code/unit tests within IntelliJ IDEA.
+- Java 8
+- Scala 2.11
+- Maven 3
+- Git 
 
-### Running the tests with Maven
+Then follow the steps:
+ 
+1. Clone this github repository `git clone https://github.com/wanderpgomes/scala-lab.git`
+2. Run `mvn clean compile scala:compile scala:testCompile test`
 
-`mvn clean compile scala:compile scala:testCompile test`
+At this point, you should have a `SUCCESSFUL` maven build with 40 JUnit tests passed and 30 ScalaTest tests ignored.
 
-Initially, all Scala Tests are going to fail due to a `not yet implemented exception`.
+### Using IntelliJ IDEA
+ 
+3. Install IntelliJ IDEA Community Edition 2017
+4. Install the Scala plugin
+   - Go to Preferences | Plugins
+   - Search for Scala and click Install
+5. Create a new IntelliJ project   
+   - File | New | Project from Existing Sources...
+   - Choose directory where the repo was cloned
+   - Choose Maven 
+   - Accept all default options
+
+6. Right click on the scala-lab project and Run | All Tests 
+7. Right click on the scala-lab project and Run | ScalaTest in 'scala'
+
+At this point you should get a green bar for the last two steps.
+   
+
+## Exercises
+
+
+The exercises for this lab are organized in an implementation/unit test format. Partial implementations for the functions are supplied and you then have to replace the **_???_** (not yet implemented operator) with Scala code so the unit tests will pass.
+
+
+Initially all the ScalaTest cases are ignored. In order to enable them, just change `ignore` to `test` for each individual test case. 
+
+- Start with the warm up exercises about high order functions `hof`  and  `pattern` matching.
+
+- Enable the tests one by one as you implement each method. `An implementation is missing` Exception is thrown if the method with `???` operator is executed.
+
 
 ### Solutions
 
-The solutions for all the exercises are available on GitHub repository history. Git Hash `d1fbabd28d81b3b7562c6ee08fb5f3f3aa4babc1`.
+The solutions for all the exercises can be found on the `solutions` branch.
