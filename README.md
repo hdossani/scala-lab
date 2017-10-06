@@ -32,9 +32,12 @@ At this point, you should have a `SUCCESSFUL` maven build with 40 JUnit tests *p
    - Choose directory where the repo was cloned
    - Choose Maven 
    - Accept all default options
+6. Make sure you use Scala 2.11
+   - File | Project Structure... | Global Libraries
+   - Choose `scala-sdk-2.11`
 
-6. Right click on the `scala-lab` project and Run | All Tests 
-7. Right click on the `scala-lab` project and Run | ScalaTest in 'scala'
+7. Right click on the `scala-lab` project and Run | All Tests 
+8. Right click on the `scala-lab` project and Run | ScalaTest in 'scala'
 
 At this point, you should get a *green bar* for the last two steps.
    
@@ -47,9 +50,11 @@ The exercises for this lab are organized in an implementation/unit test format. 
 
 Initially all the ScalaTest cases are ignored. In order to enable them, just change `ignore` to `test` for each individual test case. 
 
+- Enable the tests one by one as you implement each method. `An implementation is missing` Exception is thrown if the method with `???` operator is executed.
+
 - Start with the warm up exercises about high order functions `hof`  and  `pattern` matching.
 
-- Enable the tests one by one as you implement each method. `An implementation is missing` Exception is thrown if the method with `???` operator is executed.
+- Then proceed to the refactoring exercises in `collections`.
 
 
 ### Solutions
