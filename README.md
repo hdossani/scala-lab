@@ -7,7 +7,7 @@ After complete, you will be able to compare your answers with the corresponding 
 
 ### Setup
 
-This set of instructions assume the following pieces of software are ***already installed*** on the machine:
+This set of instructions assumes the following pieces of software are ***already installed*** on the machine:
 
 - Java 8
 - Scala 2.11
