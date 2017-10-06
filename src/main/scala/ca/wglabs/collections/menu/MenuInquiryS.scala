@@ -30,12 +30,12 @@ object MenuInquiryS extends MenuInquiry {
     */
   def groupDishesByCaloricLevel : Map[CaloricLevel, List[Dish]] = {
 
-    def mapDishToCaloricLevel : (Dish => CaloricLevel) = {
-      dish => ???
-    }
     menu.groupBy(???)
   }
 
+  def mapDishToCaloricLevel : (Dish => CaloricLevel) = {
+    dish => ???
+  }
 
   /**
     * Group the dishes by their types and within those groups, re-group them by caloric level.
