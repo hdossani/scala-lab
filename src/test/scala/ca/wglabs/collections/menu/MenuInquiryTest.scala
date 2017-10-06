@@ -7,11 +7,11 @@ import ca.wglabs.streams.menu.Dish.Type._
 
 class MenuInquiryTest extends FunSuite {
 
-  val fixture = MenuInquiry
+  val fixture = MenuInquiryS
 
   ignore("Dishes with more than 400 calories") {
 
-    val result = fixture.getLowCaloricDishNames
+    val result = fixture.getHighCaloricDishNames
 
     assertResult(List("salmon", "french fries", "pizza", "beef", "pork"))(result)
   }
@@ -116,7 +116,7 @@ class MenuInquiryTest extends FunSuite {
 
   ignore("Partition vegetarian dishes and group by type") {
 
-    val (vegetarian, nonvegetarian) = fixture.groupVegetarianDishesByType
+    val (vegetarian, nonvegetarian) = fixture.vegetarianDishesByType
 
     assertResult(4)(vegetarian(OTHER).size)
 

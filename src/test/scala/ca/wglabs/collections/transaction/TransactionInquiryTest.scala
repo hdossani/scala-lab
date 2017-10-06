@@ -1,11 +1,11 @@
 package ca.wglabs.collections.transaction
 
-import org.scalatest.{FunSuite, Ignore}
+import org.scalatest.FunSuite
 
 
 class TransactionInquiryTest extends FunSuite {
 
-  val fixture = TransactionInquiry
+  val fixture = TransactionInquiryS
 
   ignore("Total number of transactions from 2012") {
     assertResult(4)(fixture.findNumberOfTransactionsFrom2012)

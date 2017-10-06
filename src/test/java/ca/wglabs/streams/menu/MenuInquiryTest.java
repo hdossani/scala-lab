@@ -1,7 +1,6 @@
 package ca.wglabs.streams.menu;
 
 
-import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -24,7 +23,7 @@ public abstract class MenuInquiryTest {
 
         List<String> expected = Arrays.asList("salmon", "french fries", "pizza", "beef", "pork");
 
-        List<String> result = fixture.getLowCaloricDishesNames();
+        List<String> result = fixture.getHighCaloricDishesNames();
 
         assertArrayEquals(expected.toArray(), result.toArray());
     }
@@ -118,7 +117,7 @@ public abstract class MenuInquiryTest {
     @Test
     public void testPartitionByVegeterian() {
 
-        Map<Boolean, List<Dish>> result = fixture.partitionByVegeterian();
+        Map<Boolean, List<Dish>> result = fixture.partitionByVegetarian();
 
         assertEquals(5, result.get(FALSE).size());
         assertEquals("pork", result.get(FALSE).get(0).getName());

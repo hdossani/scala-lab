@@ -18,7 +18,7 @@ public interface MenuInquiry {
                     new Dish("salmon", false, 450, Dish.Type.FISH));
 
 
-    List<String> getLowCaloricDishesNames();
+    List<String> getHighCaloricDishesNames();
 
     String getShortMenuCommaSeparated();
 
@@ -34,9 +34,9 @@ public interface MenuInquiry {
 
     Map<Dish.Type, Set<Dish.CaloricLevel>> caloricLevelsByType();
 
-    Map<Boolean, List<Dish>> partitionByVegeterian();
+    Map<Boolean, List<Dish>> partitionByVegetarian();
 
     Map<Boolean, Map<Dish.Type, List<Dish>>> vegetarianDishesByType();
 
-    Map mostCaloricPartitionedByVegetarian();
+    Map<Boolean, Dish> mostCaloricPartitionedByVegetarian();
 }

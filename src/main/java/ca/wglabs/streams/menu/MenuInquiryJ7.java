@@ -10,9 +10,9 @@ public class MenuInquiryJ7 implements MenuInquiry {
 
 
     /**
-     *  Find the name of all the dishes with more than 400 calories.
+     *  Find the names of all the dishes with more than 400 calories.
      */
-    public List<String> getLowCaloricDishesNames(){
+    public List<String> getHighCaloricDishesNames(){
         List<Dish> lowCaloricDishes = new ArrayList<>();
         for(Dish d: menu){
             if(d.getCalories() > 400){
@@ -44,6 +44,9 @@ public class MenuInquiryJ7 implements MenuInquiry {
         return shortMenu.substring(0, lastCommaIndex);
     }
 
+    /**
+     *  Group the dishes by its type.
+     */
     public  Map<Dish.Type, List<Dish>> groupDishesByType() {
 
         Map<Dish.Type, List<Dish>> dishesByType =  new HashMap();
@@ -58,6 +61,9 @@ public class MenuInquiryJ7 implements MenuInquiry {
         return dishesByType;
     }
 
+    /**
+     *  Group the dishes by their caloric level.
+     */
     public Map<Dish.CaloricLevel, List<Dish>> groupDishesByCaloricLevel() {
 
         Map<Dish.CaloricLevel, List<Dish>> dishesByCaloricLevel=  new HashMap();
@@ -87,6 +93,10 @@ public class MenuInquiryJ7 implements MenuInquiry {
         return dishesByCaloricLevel;
     }
 
+
+    /**
+     *  Group the dishes by their types and within those groups, re-group them by caloric level.
+     */
     public Map<Dish.Type, Map<Dish.CaloricLevel, List<Dish>>> groupDishedByTypeAndCaloricLevel() {
 
         Map<Dish.Type, Map<Dish.CaloricLevel, List<Dish>>> dishesByTypeAndCaloricLevel = new HashMap();
@@ -133,6 +143,9 @@ public class MenuInquiryJ7 implements MenuInquiry {
         return dishesByTypeAndCaloricLevel;
     }
 
+    /**
+     *  Return the number of dishes of each group.
+     */
     public Map<Dish.Type, Long> countDishesInGroups() {
 
         Map<Dish.Type, Long> dishesPerGroup =  new HashMap();
@@ -148,6 +161,9 @@ public class MenuInquiryJ7 implements MenuInquiry {
         return dishesPerGroup;
     }
 
+    /**
+     *  Return the total amount of calories for each group.
+     */
     public Map<Dish.Type, Long> sumCaloriesByType() {
 
         Map<Dish.Type, Long> caloriesByType =  new HashMap();
@@ -163,12 +179,15 @@ public class MenuInquiryJ7 implements MenuInquiry {
         return caloriesByType;
     }
 
+    /**
+     *   Returns the dish caloric levels grouped by their type.
+     */
     public Map<Dish.Type, Set<Dish.CaloricLevel>> caloricLevelsByType() {
 
         Map<Dish.Type, Set<Dish.CaloricLevel>> caloricLevelByType =  new HashMap();
 
         for (Dish dish: menu){
-            Dish.CaloricLevel caloricLevel = null;
+            Dish.CaloricLevel caloricLevel;
             if (dish.getCalories() <= 400) caloricLevel = Dish.CaloricLevel.DIET;
             else if (dish.getCalories() <= 700) caloricLevel = Dish.CaloricLevel.NORMAL;
             else caloricLevel = Dish.CaloricLevel.FAT;
@@ -184,7 +203,10 @@ public class MenuInquiryJ7 implements MenuInquiry {
         return caloricLevelByType;
     }
 
-    public Map<Boolean, List<Dish>> partitionByVegeterian() {
+    /**
+     *  Partition the list of dishes in two groups: vegetarian and non-vegetarian.
+     */
+    public Map<Boolean, List<Dish>> partitionByVegetarian() {
 
         Map<Boolean, List<Dish>> partition = new HashMap();
 
@@ -205,11 +227,15 @@ public class MenuInquiryJ7 implements MenuInquiry {
         return partition;
     }
 
+    /**
+     *  Partition the list of dishes in two groups: vegetarian and non-vegetarian.
+     *  Within those groups, re-group them by dish type.
+     */
     public Map<Boolean, Map<Dish.Type, List<Dish>>> vegetarianDishesByType() {
 
         Map<Boolean, Map<Dish.Type, List<Dish>>> vegetarianDishesByType = new HashMap();
 
-        Map<Boolean, List<Dish>> partitionByVegeterian = partitionByVegeterian();
+        Map<Boolean, List<Dish>> partitionByVegeterian = partitionByVegetarian();
 
         for(Boolean key : Arrays.asList(TRUE, FALSE)) {
             Map<Dish.Type, List<Dish>> dishesByType = new HashMap();
@@ -225,15 +251,18 @@ public class MenuInquiryJ7 implements MenuInquiry {
         return vegetarianDishesByType;
     }
 
-    public Map mostCaloricPartitionedByVegetarian() {
+    /**
+     *  Return the most caloric vegetarian and non-vegetarian dishes.
+     */
+    public Map<Boolean, Dish> mostCaloricPartitionedByVegetarian() {
 
         Map<Boolean, Dish> mostCaloricPartitionedByVegetarian = new HashMap();
 
-        Map<Boolean, List<Dish>> partitionByVegeterian = partitionByVegeterian();
+        Map<Boolean, List<Dish>> partitionByVegetarian = partitionByVegetarian();
 
         for(Boolean key : Arrays.asList(TRUE, FALSE)) {
             Dish mostCaloricDish = null;
-            for (Dish dish : partitionByVegeterian.get(key)) {
+            for (Dish dish : partitionByVegetarian.get(key)) {
                 if (mostCaloricDish == null){
                     mostCaloricDish = dish;
                 } else {

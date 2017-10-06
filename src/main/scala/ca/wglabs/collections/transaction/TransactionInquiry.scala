@@ -1,6 +1,6 @@
 package ca.wglabs.collections.transaction
 
-object TransactionInquiry {
+trait TransactionInquiry {
 
   val raoul = Trader("Raoul", "Cambridge")
   val mario = Trader("Mario", "Milan")
@@ -16,52 +16,21 @@ object TransactionInquiry {
     Transaction(alan, 2012, 950)
   )
 
-   /**
-    *  Find how many transactions are from 2012.
-    */
-  def findNumberOfTransactionsFrom2012 = transactions.count(t => t.year == 2012)
+  def findNumberOfTransactionsFrom2012
 
-  /**
-    *  Find all transactions from year 2011 and sort them by value (small to high).
-    */
-  def findTransactionsFrom2011 : List[Transaction]= ???
+  def findTransactionsFrom2011 : List[Transaction]
 
-  /**
-    * Find all the unique cities where the traders work.
-    */
-  def findAllUniqueCities = transactions.map(???).distinct
+  def findAllUniqueCities : List[String]
 
-  /**
-    * Find all traders from Cambridge and sort them by name.
-    */
-  def findAllTradersFromCambridge: List[Trader] = ???
+  def findAllTradersFromCambridge : List[Trader]
 
+  def getAllTradersNames
 
-  /**
-    * Get a string of all traders’ names sorted alphabetically.
-    */
-  def getAllTradersNames = ???
+  def areThereAnyTraderFromMilan : Boolean
 
-  /**
-    * Are there any trader based in Milan?
-    */
-  def areThereAnyTraderFromMilan = transactions.exists(???)
+  def updateTradersFromMilanToCambridge : List[Transaction]
 
-  /**
-    * Update all transactions so that the traders from Milan are set to Cambridge.
-    *
-    * hint: Use foreach function to mutate transactions.
-    */
-  def updateTradersFromMilanToCambridge : List[Transaction] = ???
+  def getHighestTransactionValue
 
-  /**
-    * Get the highest value in all the transactions.
-    */
-  def getHighestTransactionValue = ???
-
-  /**
-    * Get the sum of all transaction values.
-    */
-  def getTransactionTotal = transactions.map(???).fold(???)(???)
-
+  def getTransactionTotal
 }

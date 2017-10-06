@@ -11,9 +11,9 @@ public class MenuInquiryJ8 implements MenuInquiry {
 
 
     /**
-     * Find the name of all the dishes with more than 400 calories.
+     *  Find the names of all the dishes with more than 400 calories.
      */
-    public List<String> getLowCaloricDishesNames() {
+    public List<String> getHighCaloricDishesNames() {
         return menu.stream()
                 .filter(d -> d.getCalories() > 400)
                 .sorted(comparing(Dish::getCalories))
@@ -22,7 +22,7 @@ public class MenuInquiryJ8 implements MenuInquiry {
     }
 
     /**
-     * Return the name of all the dishes separated by comma.
+     *  Return the name of all the dishes separated by comma.
      */
     public String getShortMenuCommaSeparated() {
         return menu.stream()
@@ -30,11 +30,17 @@ public class MenuInquiryJ8 implements MenuInquiry {
                 .collect(joining(", "));
     }
 
+    /**
+     *  Group the dishes by its type.
+     */
     public Map<Dish.Type, List<Dish>> groupDishesByType() {
         return menu.stream()
                 .collect(groupingBy(Dish::getType));
     }
 
+    /**
+     *  Group the dishes by their caloric level.
+     */
     public Map<Dish.CaloricLevel, List<Dish>> groupDishesByCaloricLevel() {
         return menu.stream().collect(
                 groupingBy(dish -> {
@@ -44,6 +50,9 @@ public class MenuInquiryJ8 implements MenuInquiry {
                 }));
     }
 
+    /**
+     *  Group the dishes by their types and within those groups, re-group them by caloric level.
+     */
     public Map<Dish.Type, Map<Dish.CaloricLevel, List<Dish>>> groupDishedByTypeAndCaloricLevel() {
         return menu.stream().collect(
                 groupingBy(Dish::getType,
@@ -56,16 +65,24 @@ public class MenuInquiryJ8 implements MenuInquiry {
         );
     }
 
+    /**
+     *  Return the number of dishes of each group.
+     */
     public Map<Dish.Type, Long> countDishesInGroups() {
         return menu.stream().collect(groupingBy(Dish::getType, counting()));
     }
 
-
+    /**
+     *  Return the total amount of calories for each group.
+     */
     public Map<Dish.Type, Long> sumCaloriesByType() {
         return menu.stream().collect(groupingBy(Dish::getType,
                 summingLong(Dish::getCalories)));
     }
 
+    /**
+     *  Returns the dish caloric levels grouped by their type.
+     */
     public Map<Dish.Type, Set<Dish.CaloricLevel>> caloricLevelsByType() {
         return menu.stream().collect(
                 groupingBy(Dish::getType, mapping(
@@ -77,15 +94,25 @@ public class MenuInquiryJ8 implements MenuInquiry {
                         toSet())));
     }
 
-    public Map<Boolean, List<Dish>> partitionByVegeterian() {
+    /**
+     *  Partition the list of dishes in two groups: vegetarian and non-vegetarian.
+     */
+    public Map<Boolean, List<Dish>> partitionByVegetarian() {
         return menu.stream().collect(partitioningBy(Dish::isVegetarian));
     }
 
+    /**
+     *  Partition the list of dishes in two groups: vegetarian and non-vegetarian.
+     *  Within those groups, re-group them by dish type.
+     */
     public Map<Boolean, Map<Dish.Type, List<Dish>>> vegetarianDishesByType() {
         return menu.stream().collect(partitioningBy(Dish::isVegetarian, groupingBy(Dish::getType)));
     }
 
-    public Map mostCaloricPartitionedByVegetarian() {
+    /**
+     *  Return the most caloric vegetarian and non-vegetarian dishes.
+     */
+    public Map<Boolean, Dish> mostCaloricPartitionedByVegetarian() {
         return menu.stream().collect(
                 partitioningBy(Dish::isVegetarian,
                         collectingAndThen(
