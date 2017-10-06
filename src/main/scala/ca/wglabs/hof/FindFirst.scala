@@ -9,18 +9,18 @@ object FindFirst {
     * hint: The possible values for an Option are None and Some.
     */
   def findFirstNumberGreaterThanTen(ns: Array[Int]): Option[Int] = {
-    val index = findFirst[Int](ns, ???)
-    if (index == -1) ???
-    else ???
+    val index = findFirst[Int](ns, n => n > 10)
+    if (index == -1) None
+    else Some(ns(index))
   }
 
   /**
     * Implement a function that returns the first word starting with the letter S.
     */
   def findFirstWordStartingWithLetterS(ns: Array[String]): Option[String] = {
-    val index = findFirst[String](ns, ???)
+    val index = findFirst[String](ns, s => s.startsWith("S"))
     if (index == -1) None
-    else ???
+    else Some(ns(index))
   }
 
   /**
@@ -30,9 +30,9 @@ object FindFirst {
     @annotation.tailrec
     def loop(n: Int): Int =
       if (n >= as.length) -1
-      else if (predicate(???)) ???
-      else loop(???)
+      else if (predicate(as(n))) n
+      else loop(n + 1)
 
-    loop(???)
+    loop(0)
   }
 }

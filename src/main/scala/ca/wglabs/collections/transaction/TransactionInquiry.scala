@@ -16,7 +16,7 @@ trait TransactionInquiry {
     Transaction(alan, 2012, 950)
   )
 
-  def findNumberOfTransactionsFrom2012
+  def findNumberOfTransactionsFrom2012 : Int
 
   def findTransactionsFrom2011 : List[Transaction]
 
@@ -24,13 +24,13 @@ trait TransactionInquiry {
 
   def findAllTradersFromCambridge : List[Trader]
 
-  def getAllTradersNames
+  def getAllTradersNames : String
 
   def areThereAnyTraderFromMilan : Boolean
 
   def updateTradersFromMilanToCambridge : List[Transaction]
 
-  def getHighestTransactionValue
+  def getHighestTransactionValue : Int
 
-  def getTransactionTotal
+  def getTransactionTotal : Int
 }

@@ -16,9 +16,9 @@ trait MenuInquiry {
     Dish(vegetarian = false, calories = 450, dtype = Type.FISH, name = "salmon")
   )
 
-  def getHighCaloricDishNames
+  def getHighCaloricDishNames : List[String]
 
-  def getShortMenuCommaSeparated
+  def getShortMenuCommaSeparated : String
 
   def groupDishesByType : Map[Type, List[Dish]]
 

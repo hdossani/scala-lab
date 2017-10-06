@@ -9,7 +9,7 @@ class FindFirstTest extends FunSuite  {
   val fixture = FindFirst
 
 
-  ignore("Find first number greater than 10"){
+  test("Find first number greater than 10"){
 
     val as = Array(-1, 9, 8, 1, 2, -7, 11, 12, 9)
 
@@ -18,7 +18,7 @@ class FindFirstTest extends FunSuite  {
     assertResult(Some(11))(result)
   }
 
-  ignore("Find first number greater than 10 on an array of number smaller than 10"){
+  test("Find first number greater than 10 on an array of number smaller than 10"){
 
     val as = Array(-1, 9, 8, 1, 2, -7)
 
@@ -27,7 +27,7 @@ class FindFirstTest extends FunSuite  {
     assertResult(None)(result)
   }
 
-  ignore("Find first number greater than 10 on an empty array"){
+  test("Find first number greater than 10 on an empty array"){
 
     val as = Array.emptyIntArray
 
@@ -36,7 +36,7 @@ class FindFirstTest extends FunSuite  {
     assertResult(None)(result)
   }
 
-  ignore("Find first word starting with the letter 'S'"){
+  test("Find first word starting with the letter 'S'"){
 
     val as = Array("Java", "Python", "C++", "Scala", "Javascript", "SQL")
 

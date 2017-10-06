@@ -1,8 +1,8 @@
 package ca.wglabs.pattern
 
-import org.scalatest.{FunSuite, Ignore}
+import org.scalatest.FunSuite
 
-@Ignore
+
 class MathTest extends FunSuite {
 
   val fixture = Math

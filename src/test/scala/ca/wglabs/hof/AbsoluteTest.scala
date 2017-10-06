@@ -7,7 +7,7 @@ class AbsoluteTest extends FunSuite {
 
   val fixture = Absolute
 
-  ignore("Calculate absolute values") {
+  test("Calculate absolute values") {
 
     val ns = List(1, -3, -5, 7, 9, -4, 0)
 

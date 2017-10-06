@@ -7,11 +7,11 @@ class TransactionInquiryTest extends FunSuite {
 
   val fixture = TransactionInquiryS
 
-  ignore("Total number of transactions from 2012") {
+  test("Total number of transactions from 2012") {
     assertResult(4)(fixture.findNumberOfTransactionsFrom2012)
   }
 
-  ignore("Transactions from 2011 sorted by value") {
+  test("Transactions from 2011 sorted by value") {
 
     val result = fixture.findTransactionsFrom2011
 
@@ -22,7 +22,7 @@ class TransactionInquiryTest extends FunSuite {
     assertResult(400)(result(1).value)
   }
 
-  ignore("All unique cities") {
+  test("All unique cities") {
 
     val result = fixture.findAllUniqueCities
 
@@ -31,7 +31,7 @@ class TransactionInquiryTest extends FunSuite {
     assertResult("Milan")(result(1))
   }
 
-  ignore("All traders from Cambridge") {
+  test("All traders from Cambridge") {
 
     val result = fixture.findAllTradersFromCambridge
 
@@ -42,17 +42,17 @@ class TransactionInquiryTest extends FunSuite {
 
   }
 
-  ignore("All trader's names sorted alphabetically") {
+  test("All trader's names sorted alphabetically") {
 
     assertResult("AlanBrianMarioRaoul")(fixture.getAllTradersNames)
   }
 
-  ignore("Trader from Milan") {
+  test("Trader from Milan") {
 
     assert(fixture.areThereAnyTraderFromMilan)
   }
 
-  ignore("Update traders from Milan to Cambridge"){
+  test("Update traders from Milan to Cambridge"){
 
     val result = fixture.updateTradersFromMilanToCambridge
 
@@ -61,12 +61,12 @@ class TransactionInquiryTest extends FunSuite {
     assertResult("Cambridge")(result(4).trader.city)
   }
 
-  ignore("Highest transaction value"){
+  test("Highest transaction value"){
 
     assertResult(1000)(fixture.getHighestTransactionValue)
   }
 
-  ignore("Transaction total"){
+  test("Transaction total"){
 
     assertResult(4060)(fixture.getTransactionTotal)
   }
