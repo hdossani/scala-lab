@@ -32,7 +32,7 @@ At this point, you should have a `SUCCESSFUL` maven build with 40 JUnit tests *p
    - Choose directory where the repo was cloned
    - Choose Maven 
    - Accept all default options
-6. Make sure you use Scala 2.11
+6. Make sure you use Scala 2.11 (ScalaTest compatibility)
    - File | Project Structure... | Global Libraries
    - Choose `scala-sdk-2.11`
 
