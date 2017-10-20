@@ -22,3 +22,4 @@ project/plugins/project/
 .classpath
 .settings/
 
+.DS_Store
