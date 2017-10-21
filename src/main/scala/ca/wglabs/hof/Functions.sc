@@ -63,3 +63,14 @@ val add = (x: Int, y: Int) => x + y
 
 add(3, 2)
 
+//------------------------------------------------
+
+def addC(x: Int)(y: Int) = x + y
+
+addC(1)(2)
+
+
+val addTwo = addC(2)(_)
+
+addTwo(3)
+
