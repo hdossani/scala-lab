@@ -50,7 +50,7 @@ The exercises for this lab are organized in an implementation/unit test format.
 ### J7 -> J8
 
 The Java 7 implementations for the exercises are already done.
-For Java 8, the methods are initially returning either 0 or empty Collections. Remove the @Ignore annotation from the J8 test classes and implement the solutions in Java 8.
+For Java 8, the methods are initially returning either 0 or empty Collections. Remove the `@Ignore` annotation from the J8 test classes and implement the solutions in Java 8.
 
 ### J8 => Scala
 Partial implementations for the functions are supplied and you then have to replace the `???` (not yet implemented operator) with Scala code so the unit tests will pass.
