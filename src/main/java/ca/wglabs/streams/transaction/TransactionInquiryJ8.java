@@ -1,10 +1,8 @@
 package ca.wglabs.streams.transaction;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
-import static java.util.Comparator.comparing;
-import static java.util.stream.Collectors.toList;
 
 
 public class TransactionInquiryJ8 implements TransactionInquiry {
@@ -27,72 +25,48 @@ public class TransactionInquiryJ8 implements TransactionInquiry {
      * Find how many transactions are from 2012.
      */
     public Long findNumberOfTransactionsFrom2012() {
-        return transactions.stream()
-                .filter(transaction -> transaction.getYear() == 2012)
-                .count();
+        return 0L;
     }
 
     /**
      * Find all transactions from year 2011 and sort them by value (small to high).
      */
     public List<Transaction> findTransactionsFrom2011() {
-        return transactions.stream()
-                .filter(transaction -> transaction.getYear() == 2011)
-                .sorted(comparing(Transaction::getValue))
-                .collect(toList());
+        return new ArrayList<>();
     }
 
     /**
      * Find all the unique cities where the traders work.
      */
     public List<String> findAllUniqueCities() {
-        return transactions.stream()
-                .map(transaction -> transaction.getTrader().getCity())
-                .distinct()
-                .collect(toList());
+        return new ArrayList<>();
     }
 
     /**
      * Find all traders from Cambridge and sort them by name.
      */
     public List<Trader> findAllTradersFromCambridge() {
-        return transactions.stream()
-                .map(Transaction::getTrader)
-                .filter(trader -> trader.getCity().equals("Cambridge"))
-                .distinct()
-                .sorted(comparing(Trader::getName))
-                .collect(toList());
+        return new ArrayList<>();
     }
 
     /**
      * Get a string of all traders’ names sorted alphabetically.
      */
     public String getAllTradersNames() {
-        return transactions.stream()
-                .map(transaction -> transaction.getTrader().getName())
-                .distinct()
-                .sorted()
-                .reduce("", (n1, n2) -> n1 + n2);
+        return "";
     }
 
     /**
      * Are there any trader based in Milan?
      */
     public Boolean areThereAnyTraderFromMilan() {
-        return transactions.stream()
-                .anyMatch(transaction -> transaction.getTrader().getCity().equals("Milan"));
+        return false;
     }
 
     /**
      * Update all transactions so that the traders from Milan are set to Cambridge.
      */
     public List<Transaction> updateTradersFromMilanToCambridge() {
-
-        transactions.stream()
-                .map(Transaction::getTrader)
-                .filter(trader -> trader.getCity().equals("Milan"))
-                .forEach(trader -> trader.setCity("Cambridge"));
-
         return transactions;
     }
 
@@ -100,18 +74,14 @@ public class TransactionInquiryJ8 implements TransactionInquiry {
      * Get the highest value in all the transactions.
      */
     public Integer getHighestTransactionValue() {
-        return transactions.stream()
-                .map(Transaction::getValue)
-                .reduce(0, Integer::max);
+        return 0;
     }
 
     /**
      * Get the sum of all transaction values.
      */
     public Integer getTransactionTotal() {
-        return transactions.stream()
-                .map(Transaction::getValue)
-                .reduce(0, Integer::sum);
+        return 0;
     }
 
 }
