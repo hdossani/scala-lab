@@ -1,7 +1,7 @@
 # J7 -> J8 => Scala: a Refactoring Exercise 
 
 The goal of this activity is to introduce a few basic concepts of the the Scala Programming Language through code refactoring exercises.
-Based on challenges and their solutions already implemented in Java 7 and Java 8, the idea is to solve the same set of questions in Scala so it will pass the unit tests, also provided.
+Based on challenges and their solutions already implemented in Java 7, the idea is to solve the same set of questions in Java 8 and Scala so it will pass the unit tests, also provided.
 After complete, you will be able to compare your answers with the corresponding ones in Java and have a taste of how awesome Scala really is!
 
 
