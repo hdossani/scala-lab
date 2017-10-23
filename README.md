@@ -19,7 +19,7 @@ Then follow the steps:
 1. Clone this GitHub repository `git clone https://github.com/wanderpgomes/scala-lab.git`
 2. Run `mvn clean compile scala:compile scala:testCompile test`
 
-At this point, you should have a `SUCCESSFUL` maven build with 40 JUnit tests *passed* and 30 ScalaTest tests *ignored*.
+At this point, you should have a `SUCCESSFUL` maven build with only the Java 7 tests passing. All the other tests for Java 8 ans Scala are **ignored**.
 
 ### Using IntelliJ IDEA
  
@@ -45,8 +45,15 @@ At this point, you should get a *green bar* for the last two steps.
 ## Exercises
 
 
-The exercises for this lab are organized in an implementation/unit test format. Partial implementations for the functions are supplied and you then have to replace the `???` (not yet implemented operator) with Scala code so the unit tests will pass.
+The exercises for this lab are organized in an implementation/unit test format.
 
+### J7 -> J8
+
+The Java 7 implementations for the exercises are already done.
+For Java 8, the methods are initially returning either 0 or empty Collections. Remove the @Ignore annotation from the J8 test classes and implement the solutions in Java 8.
+
+### J8 => Scala
+Partial implementations for the functions are supplied and you then have to replace the `???` (not yet implemented operator) with Scala code so the unit tests will pass.
 
 Initially all the ScalaTest cases are ignored. In order to enable them, just change `ignore` to `test` for each individual test case. 
 
@@ -59,4 +66,5 @@ Initially all the ScalaTest cases are ignored. In order to enable them, just cha
 
 ### Solutions
 
-The solutions for all the exercises can be found on the `solutions` branch.
+The Java 8 solutions can be found on the `solutions-java8` branch.
+The Scala solutions can be found on the `solutions-scala` branch.
