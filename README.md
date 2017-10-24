@@ -68,3 +68,8 @@ Initially all the ScalaTest cases are ignored. In order to enable them, just cha
 
 The Java 8 solutions can be found on the `solutions-java8` branch.
 The Scala solutions can be found on the `solutions-scala` branch.
+
+
+### Videos
+
+- [Scala in a Java 8 World](https://youtu.be/8vxTowBXJSg)
